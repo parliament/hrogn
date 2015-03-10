@@ -26,7 +26,7 @@ PARLIAMENT.MediaQueryDisplay = defclass({
     this.sizes = [{min: 0, max: screen_xs_max, name:"xs"},
                   {min: screen_sm_min, max: screen_sm_max, name:"sm"},
                   {min: screen_md_min, max: screen_md_max, name:"md"},
-                  {min: screen_lg_min, max: Infinity, name:"lg"}];
+                  {min: screen_lg_min, max: 1000000, name:"lg"}];
 
     this.displayElement = document.createElement("div");
     var s = this.displayElement.style;
