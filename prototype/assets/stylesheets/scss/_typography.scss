@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'Open Sans';
+}
+
+@mixin font-open-sans-light {
+  font-family: "DIN Next W01 Light", Helvetica, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+@mixin font-open-sans-regular {
+  font-family: "DIN Next W01 Regular", Helvetica, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin font-open-sans-semibold {
+  font-family: "DIN Next W01 Medium", Helvetica, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+@mixin font-open-sane-extrabold {
+  font-family: "DIN Next W01 Heavy", Helvetica, sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+

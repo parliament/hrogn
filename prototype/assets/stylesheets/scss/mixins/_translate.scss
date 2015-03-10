@@ -1,0 +1,109 @@
+
+// generic transform
+@mixin transform($transforms) {
+	   -moz-transform: $transforms;
+	     -o-transform: $transforms;
+	    -ms-transform: $transforms;
+	-webkit-transform: $transforms;
+          transform: $transforms;
+}
+
+// rotate
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+ 
+// scale
+@mixin scale($scale) {
+	 @include transform(scale($scale));
+} 
+
+// translate
+@mixin translate ($x, $y) {
+   @include transform(translate($x, $y));
+}
+
+@mixin translateX ($x) {
+   @include transform(translate($x, 0));
+}
+
+@mixin translateY ($y) {
+   @include transform(translate(0, $y));
+}
+
+// skew
+@mixin skew ($x, $y) {
+   @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+//transform origin
+@mixin transform-origin ($origin) {
+    moz-transform-origin: $origin;
+	     -o-transform-origin: $origin;
+	    -ms-transform-origin: $origin;
+	-webkit-transform-origin: $origin;
+          transform-origin: $origin;
+}
+
+@mixin scale3d($scale-x: 1,
+$scale-y: 1,
+$scale-z: 1,
+$perspective: false) {
+  $trans: scale3d($scale-x, $scale-y, $scale-z);
+  @if $perspective {
+    $trans: perspective($perspective) $trans;
+  }
+  @include transform3d($trans);
+}
+
+// Transform sent as a complete string:
+//
+//     @include transform( transforms [, 3D-only ] )
+//
+// where 'transforms' is a space separated list of all the transforms to be applied.
+@mixin transform($transform,
+$only3d: false) {
+  @if $only3d {
+    @include experimental(transform, $transform, -moz, -webkit, -o, -ms, not -khtml, official);
+  } @else {
+    @include experimental(transform, $transform, -moz, -webkit, -o, -ms, not -khtml, official);
+  }
+}
+
+// Shortcut to target all browsers with 2D transform support
+@mixin transform2d($trans) {
+  @include transform($trans, false);
+}
+
+// Shortcut to target only browsers with 3D transform support
+@mixin transform3d($trans) {
+  @include transform($trans, true);
+}
+
+// This mixin provides basic support for CSS3 properties and
+// their corresponding experimental CSS2 properties when
+// the implementations are identical except for the property
+// prefix.
+@mixin experimental($property, $value,
+$moz: $experimental-support-for-mozilla,
+$webkit: $experimental-support-for-webkit,
+$o: $experimental-support-for-opera,
+$ms: $experimental-support-for-microsoft,
+$khtml: $experimental-support-for-khtml,
+$official: true) {
+  @if $webkit {
+    -webkit-#{$property} : $value;
+  }
+  @if $moz {
+    -moz-#{$property} : $value;
+  }
+  @if $ms {
+    -ms-#{$property} : $value;
+  }
+  @if $o {
+    -o-#{$property} : $value;
+  }
+  @if $official {
+    #{$property} : $value;
+  }
+}

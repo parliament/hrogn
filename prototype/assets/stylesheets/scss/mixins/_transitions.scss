@@ -1,0 +1,14 @@
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin transition-delay($dly: 500ms) {
+	-webkit-transition-delay: $dly;
+  -moz-transition-delay: $dly;
+  -o-transition-delay: $dly;
+  transition-delay: $dly;
+}

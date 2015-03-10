@@ -1,0 +1,37 @@
+# Craft runtime and backups folders
+# ----------------------------------------------------------------------
+craft/storage/runtime/*
+craft/storage/backups/*
+ 
+# Uploaded files
+# ----------------------------------------------------------------------
+public/assets/uploads/*
+images/applicants/*
+ 
+# OS or Editor files
+# ----------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+.cache
+.project
+.settings
+*.sublime-project
+*.sublime-workspace
+_notes
+
+
+# Numerous always-ignore extensions
+# ----------------------------------------------------------------------
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+*.sass-cache
+node_modules/*
+
+
