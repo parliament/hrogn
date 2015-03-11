@@ -144,7 +144,7 @@ module.exports = function (grunt) {
         },
         files: {
           '{{stylesheets}}/app.min.css': [
-            '{{assets}}/{{stylesheets}}/_bower.css'
+            '{{assets}}/{{stylesheets}}/_bower.css',
             '{{stylesheets}}/app.css'
           ]
         }
