@@ -9,12 +9,10 @@ module.exports = function (grunt) {
   // Project configuration.
   grunt.initConfig({
 
-
-
     watch: {
       scripts: {
         files: ['{{assets}}/{{javascripts}}/**/*.js'],
-        tasks: ['concat:js'],
+        tasks: ['bower_concat', 'concat:js'],
         options: {
           spawn: false,
           livereload: true
@@ -23,7 +21,7 @@ module.exports = function (grunt) {
 
       styles: {
         files: ['{{assets}}/{{stylesheets}}/scss/**/*.scss'],
-        tasks: ['sass:compile'],
+        tasks: ['bower_concat', 'sass:compile'],
         options: {
           livereload: true,
         }
@@ -48,6 +46,7 @@ module.exports = function (grunt) {
         files: ['Gruntfile.js']
       }
     },
+
 
     connect: {
       options: {
@@ -96,9 +95,21 @@ module.exports = function (grunt) {
     },
 
 
+    bower_concat: {
+      all: {
+        dest: '{{assets}}/{{javascripts}}/_bower.js',
+        cssDest: '{{assets}}/{{stylesheets}}/_bower.css',
+        bowerOptions: {
+          relative: false
+        }
+      }
+    },
+
+
     concat: {
       js: {
-        src: ['{{assets}}/{{javascripts}}/app.js'],
+        src: ['{{assets}}/{{javascripts}}/_bower.js',
+              '{{assets}}/{{javascripts}}/app.js'],
         dest: '{{javascripts}}/app.js',
       }
     },
@@ -133,6 +144,7 @@ module.exports = function (grunt) {
         },
         files: {
           '{{stylesheets}}/app.min.css': [
+            '{{assets}}/{{stylesheets}}/_bower.css'
             '{{stylesheets}}/app.css'
           ]
         }
@@ -147,19 +159,24 @@ module.exports = function (grunt) {
     'watch'
   ]);
 
+
   grunt.registerTask('dev', [
+    'bower_concat',
     'concat:js',
     'cssmin:dist',
     'responsive_images:resize'
-  ])
+  ]);
+
 
   grunt.registerTask('build', [
+    'bower_concat',
     'concat:js',
     'uglify:dist',
     'sass:compile',
     'cssmin:dist',
     'responsive_images:resize'
   ]);
+
 
   grunt.registerTask('default', ['server']);
 
