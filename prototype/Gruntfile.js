@@ -107,7 +107,9 @@ module.exports = function (grunt) {
     uglify: {
       dist: {
         files: {
-          '{{javascripts}}/app.min.js': ['{{javascripts}}/app.js']
+          '{{javascripts}}/app.min.js': [
+            '{{javascripts}}/app.js'
+          ]
         }
       }
     },
@@ -116,7 +118,9 @@ module.exports = function (grunt) {
     sass: {
       compile: {
         files: {
-          '{{stylesheets}}/app.css': '{{assets}}/{{stylesheets}}/scss/app.scss'
+          '{{stylesheets}}/app.css': [
+            '{{assets}}/{{stylesheets}}/scss/app.scss'
+          ]
         }
       },
     },
