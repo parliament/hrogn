@@ -5,8 +5,8 @@ craft/storage/backups/*
  
 # Uploaded files
 # ----------------------------------------------------------------------
-public/assets/uploads/*
-images/applicants/*
+assets/uploads/*
+images/uploads/*
  
 # OS or Editor files
 # ----------------------------------------------------------------------
