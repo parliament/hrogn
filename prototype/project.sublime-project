@@ -1,0 +1,22 @@
+{
+  "folders": [
+    
+    {
+      "name": "root",
+      "path": ".",
+      "file_include_patterns": ["index.html", "404.html", "Gruntfile.js", "package.json", "humans.txt", "robots.txt"],
+      "folder_exclude_patterns": [".sass-cache", "fonts", "images", "node_modules", "assets", "javascripts", "stylesheets"]
+    },
+    
+    {
+      "name": "stylesheets",
+      "path": "{{assets}}/{{stylesheets}}"
+    },
+    
+    {
+      "name": "javascripts",
+      "path": "{{assets}}/{{javascripts}}"
+    }
+    
+  ]
+}
