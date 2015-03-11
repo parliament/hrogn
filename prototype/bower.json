@@ -26,14 +26,16 @@
     "tests"
   ],
   "dependencies": {
-    "SuperScrollorama": "~1.0.3",
-    "fastclick": "~1.0.6",
-    "gsap": "~1.16.0",
-    "jquery.stellar": "~0.6.2",
     "jquery": "~1.9.1",
-    "hammerjs": "~2.0.4",
-    "picturefill": "~2.2.0",
-    "waypoints": "~3.1.1"
+    "gsap": "~1.16.0",
+    // "SuperScrollorama": "~1.0.3",
+    // "fastclick": "~1.0.6",
+    // "gsap": "~1.16.0",
+    // "jquery.stellar": "~0.6.2",
+    // "jquery": "~1.9.1",
+    // "hammerjs": "~2.0.4",
+    // "picturefill": "~2.2.0",
+    // "waypoints": "~3.1.1"
   },
   "devDependencies": {
     "bootstrap": "~3.3.2"
