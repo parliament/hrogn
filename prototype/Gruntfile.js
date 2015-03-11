@@ -98,12 +98,18 @@ module.exports = function (grunt) {
     bower_concat: {
       js: {
         dest: '{{assets}}/{{javascripts}}/_bower.js',
+        mainFiles: {
+          'greensock-js': 'src/uncompressed/TweenMax.js'
+        },
         bowerOptions: {
           relative: false
         }
       },
       css: {
         cssDest: '{{assets}}/{{stylesheets}}/_bower.css',
+        mainFiles: {
+          'greensock-js': 'src/uncompressed/TweenMax.js'
+        },
         bowerOptions: {
           relative: false
         }
@@ -111,6 +117,9 @@ module.exports = function (grunt) {
       all: {
         dest: '{{assets}}/{{javascripts}}/_bower.js',
         cssDest: '{{assets}}/{{stylesheets}}/_bower.css',
+        mainFiles: {
+          'greensock-js': 'src/uncompressed/TweenMax.js'
+        },
         bowerOptions: {
           relative: false
         }

@@ -5,7 +5,7 @@
     "Lucas Swick <lucas@weareparliament.com>"
   ],
   "description": "Parliament static site builder",
-  "main": "[\"stylesheets/app.css\", \"javascripts/app.js\"]",
+  "main": "[\"{{assets}}/{{stylesheets}}/_bower.css\", \"{{assets}}/{{javascripts}}/_bower.js\"]",
   "moduleType": [
     "globals"
   ],
